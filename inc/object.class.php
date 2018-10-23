@@ -699,7 +699,7 @@ class PluginGenericobjectObject extends CommonDBTM {
     * @return void
     * @todo Style using CSS classes
    **/
-   public function displayHRowSpacer($color = '#f5f5f5', $tr_classes = "genericobject__hrowspacer") {
+   public function displayHRowSpacer($color = '', $tr_classes = "genericobject__hrowspacer") {
       //Case: A row created previously must be closed.
       //      We expect a well formed left column and a missing right column.
       if ($this->cpt > 0) {
@@ -709,10 +709,12 @@ class PluginGenericobjectObject extends CommonDBTM {
          $this->cpt = 0;
       }
 
+      $style_attribute = $color ? 'style="border-color:'.htmlspecialchars($color).';"' : '';
+
       //Display the spacer.
       echo '<tr class="'.htmlspecialchars($tr_classes).'">';
          echo '<td colspan="4" style="padding:1rem 0;">';
-            echo '<hr style="border:1px solid '.htmlspecialchars($color).';"/>';
+            echo '<hr '.$style_attribute.'/>';
          echo '</td>';
       echo '</tr>';
    }
