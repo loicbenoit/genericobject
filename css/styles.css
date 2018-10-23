@@ -61,3 +61,8 @@
 .genericobject_type_profiles tr > td {
    width : 10%;
 }
+
+.genericobject__hrowspacer hr
+{
+   border:1px solid #f5f5f5;
+}
